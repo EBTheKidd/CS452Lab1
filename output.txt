@@ -1,0 +1,58 @@
+myshell.c: In function ‘sig_handler’:
+myshell.c:23:16: warning: implicit declaration of function ‘wait’; did you mean ‘exit’? [-Wimplicit-function-declaration]
+   int result = wait(&status);
+                ^~~~
+                exit
+myshell.c: At top level:
+myshell.c:31:1: warning: return type defaults to ‘int’ [-Wimplicit-int]
+ main() {
+ ^~~~
+myshell.c: In function ‘main’:
+myshell.c:42:3: warning: implicit declaration of function ‘sigset’; did you mean ‘sigwait’? [-Wimplicit-function-declaration]
+   sigset(SIGCHLD, sig_handler);
+   ^~~~~~
+   sigwait
+myshell.c:56:8: warning: implicit declaration of function ‘internal_command’ [-Wimplicit-function-declaration]
+     if(internal_command(args))
+        ^~~~~~~~~~~~~~~~
+myshell.c:60:14: warning: implicit declaration of function ‘ampersand’ [-Wimplicit-function-declaration]
+     block = (ampersand(args) == 0);
+              ^~~~~~~~~
+myshell.c:63:13: warning: implicit declaration of function ‘redirect_input’ [-Wimplicit-function-declaration]
+     input = redirect_input(args, &input_filename);
+             ^~~~~~~~~~~~~~
+myshell.c:78:14: warning: implicit declaration of function ‘redirect_output’ [-Wimplicit-function-declaration]
+     output = redirect_output(args, &output_filename);
+              ^~~~~~~~~~~~~~~
+myshell.c:93:5: warning: implicit declaration of function ‘do_command’ [-Wimplicit-function-declaration]
+     do_command(args, block,
+     ^~~~~~~~~~
+myshell.c: In function ‘internal_command’:
+myshell.c:123:6: warning: implicit declaration of function ‘strcmp’ [-Wimplicit-function-declaration]
+   if(strcmp(args[0], "exit") == 0) {
+      ^~~~~~
+myshell.c: In function ‘do_command’:
+myshell.c:148:5: warning: ‘return’ with no value, in function returning non-void
+     return;
+     ^~~~~~
+myshell.c:133:5: note: declared here
+ int do_command(char **args, int block,
+     ^~~~~~~~~~
+myshell.c:151:5: warning: ‘return’ with no value, in function returning non-void
+     return;
+     ^~~~~~
+myshell.c:133:5: note: declared here
+ int do_command(char **args, int block,
+     ^~~~~~~~~~
+myshell.c:172:14: warning: implicit declaration of function ‘waitpid’; did you mean ‘getpid’? [-Wimplicit-function-declaration]
+     result = waitpid(child_id, &status, 0);
+              ^~~~~~~
+              getpid
+lex.c: In function ‘yylex’:
+lex.c:23:8: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+ \n return (int)_args;
+        ^
+lex.c: In function ‘getaline’:
+lex.c:33:10: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ }
+          ^
