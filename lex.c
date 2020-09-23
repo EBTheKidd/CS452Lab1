@@ -7,6 +7,8 @@ int _argcount = 0;
 WORD	[a-zA-Z0-9\/\.-]+
 SPECIAL	[()><|&;*]
 
+%option noyywrap
+
 %%
 	_argcount = 0; 
 	_args[0] = NULL; 
@@ -26,7 +28,7 @@ SPECIAL	[()><|&;*]
 
 %%
 
-char **getline() {
+char **getaline() {
   return (char **)yylex();
 }
 

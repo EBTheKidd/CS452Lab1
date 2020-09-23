@@ -11,6 +11,7 @@
 #include <sys/types.h>
 #include <errno.h>
 #include <signal.h>
+#include <stdlib.h>
 
 extern char **getaline();
 
